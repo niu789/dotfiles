@@ -1,5 +1,6 @@
 eval `ssh-agent`
 ssh-add -K -A
+
 # Enable Powerlevel10k instant prompt. Should stay close to the top of ~/.zshrc.
 # Initialization code that may require console input (password prompts, [y/n]
 # confirmations, etc.) must go above this block, everything else may go below.
@@ -149,10 +150,10 @@ prompt_context() {
 
 eval "$(direnv hook zsh)"
 
-. /usr/local/opt/asdf/asdf.sh
+. $(brew --prefix asdf)/asdf.sh
 
-. /usr/local/opt/asdf/etc/bash_completion.d/asdf.bash
+. $(brew --prefix asdf)/etc/bash_completion.d/asdf.bash
 
 #THIS MUST BE AT THE END OF THE FILE FOR SDKMAN TO WORK!!!
-export SDKMAN_DIR="/Users/niu789/.sdkman"
-[[ -s "/Users/niu789/.sdkman/bin/sdkman-init.sh" ]] && source "/Users/niu789/.sdkman/bin/sdkman-init.sh"
+export SDKMAN_DIR="$HOME/.sdkman"
+[[ -s "$HOME/.sdkman/bin/sdkman-init.sh" ]] && source "$HOME/.sdkman/bin/sdkman-init.sh"

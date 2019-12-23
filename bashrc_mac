@@ -132,6 +132,5 @@ export DOCKER_HOST=localhost:2375
 eval "$(direnv hook bash)"
 
 #THIS MUST BE AT THE END OF THE FILE FOR SDKMAN TO WORK!!!
-export SDKMAN_DIR="/Users/niu789/.sdkman"
-[[ -s "/Users/niu789/.sdkman/bin/sdkman-init.sh" ]] && source "/Users/niu789/.sdkman/bin/sdkman-init.sh"
-
+export SDKMAN_DIR="$HOME/.sdkman"
+[[ -s "$HOME/.sdkman/bin/sdkman-init.sh" ]] && source "$HOME/.sdkman/bin/sdkman-init.sh"

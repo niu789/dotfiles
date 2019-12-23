@@ -1,3 +1,6 @@
+eval `ssh-agent`
+ssh-add -K -A
+
 # Enable Powerlevel10k instant prompt. Should stay close to the top of ~/.zshrc.
 # Initialization code that may require console input (password prompts, [y/n]
 # confirmations, etc.) must go above this block, everything else may go below.
@@ -26,7 +29,7 @@ if [[ "$(umask)" = "0000" ]]; then
 fi
 
 # Path to your oh-my-zsh installation.
-export ZSH="/home/nicolasbelanger/.oh-my-zsh"
+export ZSH="$HOME/.oh-my-zsh"
 
 # Set name of the theme to load --- if set to "random", it will
 # load a random theme each time oh-my-zsh is loaded, in which case,
@@ -71,7 +74,7 @@ ZSH_THEME="agnoster"
 # ENABLE_CORRECTION="true"
 
 # Uncomment the following line to display red dots whilst waiting for completion.
-# COMPLETION_WAITING_DOTS="true"
+COMPLETION_WAITING_DOTS="true"
 
 # Uncomment the following line if you want to disable marking untracked files
 # under VCS as dirty. This makes repository status check for large repositories
@@ -134,6 +137,8 @@ umask 022
 
 cd
 
+rm -f ~/.zcompdump; compinit
+
 prompt_context() {
 	if [[ "$USER" != "$DEFAULT_USER" || -n "$SSH_CLIENT" ]]; then
 		prompt_segment black default "%(!.%{%F{yellow}%}.)$USER"
@@ -143,14 +148,12 @@ prompt_context() {
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
 
-rm -f ~/.zcompdump; compinit
-
 eval "$(direnv hook zsh)"
 
-. /home/linuxbrew/.linuxbrew/opt/asdf/asdf.sh
+. $(brew --prefix asdf)/asdf.sh
 
-. /home/linuxbrew/.linuxbrew/opt/asdf/etc/bash_completion.d/asdf.bash
+. $(brew --prefix asdf)/etc/bash_completion.d/asdf.bash
 
 #THIS MUST BE AT THE END OF THE FILE FOR SDKMAN TO WORK!!!
-export SDKMAN_DIR="/home/nicolasbelanger/.sdkman"
-[[ -s "/home/nicolasbelanger/.sdkman/bin/sdkman-init.sh" ]] && source "/home/nicolasbelanger/.sdkman/bin/sdkman-init.sh"
+export SDKMAN_DIR="$HOME/.sdkman"
+[[ -s "$HOME/.sdkman/bin/sdkman-init.sh" ]] && source "$HOME/.sdkman/bin/sdkman-init.sh"
