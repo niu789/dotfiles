@@ -1,0 +1,119 @@
+
+// To view the default settings, hold "alt" while clicking on the "Settings" button.
+// For documentation on these settings, see: https://aka.ms/terminal-documentation
+
+{
+    "$schema": "https://aka.ms/terminal-profiles-schema",
+
+    //"defaultProfile": "{61c54bbd-c2c6-5271-96e7-009a87ff44bf}",
+    "defaultProfile": "{2c4de342-38b7-51cf-b940-2309a097f518}",
+
+    "profiles":
+    [
+        {
+            // Make changes here to the powershell.exe profile
+            "guid": "{61c54bbd-c2c6-5271-96e7-009a87ff44bf}",
+            "name": "Windows PowerShell",
+            "commandline": "powershell.exe",
+            "hidden": false
+        },
+        {
+            // Make changes here to the cmd.exe profile
+            "guid": "{0caa0dad-35be-5f56-a8ff-afceeeaa6101}",
+            "name": "cmd",
+            "colorScheme" : "Dark+NicoCMD",
+            "fontFace" : "Ubuntu Mono derivative Powerline",
+            "commandline": "cmd.exe",
+            "hidden": false
+        },
+        {
+            "guid": "{2c4de342-38b7-51cf-b940-2309a097f518}",
+            "hidden": false,
+            "name": "Ubuntu",
+            "colorScheme" : "Dark+NicoLinux",
+            "fontFace" : "Ubuntu Mono derivative Powerline",
+            "source": "Windows.Terminal.Wsl"
+        },
+        {
+            "guid": "{b453ae62-4e3d-5e58-b989-0a998ec441b8}",
+            "hidden": false,
+            "name": "Azure Cloud Shell",
+            "source": "Windows.Terminal.Azure"
+        },
+        {
+            "guid": "{da64380f-ae55-4b52-84fb-1c3ffd6ef493}",
+            "name": "putty",
+            "colorScheme" : "Dark+NicoCMD",
+            "fontFace" : "Ubuntu Mono derivative Powerline",
+            "commandline": "notepad.exe",
+            "hidden": true
+        }
+    ],
+
+    // Add custom color schemes to this array
+    "schemes": [{
+                  "name": "Dark+",
+                  "black": "#000000",
+                  "red": "#cd3131",
+                  "green": "#0dbc79",
+                  "yellow": "#e5e510",
+                  "blue": "#2472c8",
+                  "purple": "#bc3fbc",
+                  "cyan": "#11a8cd",
+                  "white": "#e5e5e5",
+                  "brightBlack": "#666666",
+                  "brightRed": "#f14c4c",
+                  "brightGreen": "#23d18b",
+                  "brightYellow": "#f5f543",
+                  "brightBlue": "#3b8eea",
+                  "brightPurple": "#d670d6",
+                  "brightCyan": "#29b8db",
+                  "brightWhite": "#e5e5e5",
+                  "background": "#0e0e0e",
+                  "foreground": "#cccccc"
+                },{
+                  "name": "Dark+NicoLinux",
+                  "black": "#000000",
+                  "red": "#cd3131",
+                  "green": "#0dbc79",
+                  "yellow": "#e5e510",
+                  "blue": "#2472c8",
+                  "purple": "#bc3fbc",
+                  "cyan": "#11a8cd",
+                  "white": "#e5e5e5",
+                  "brightBlack": "#666666",
+                  "brightRed": "#f14c4c",
+                  "brightGreen": "#23d18b",
+                  "brightYellow": "#f5f543",
+                  "brightBlue": "#3b8eea",
+                  "brightPurple": "#d670d6",
+                  "brightCyan": "#29b8db",
+                  "brightWhite": "#e5e5e5",
+                  "background": "#0F000F",
+                  "foreground": "#cccccc"
+                },{
+                  "name": "Dark+NicoCMD",
+                  "black": "#000000",
+                  "red": "#cd3131",
+                  "green": "#0dbc79",
+                  "yellow": "#e5e510",
+                  "blue": "#2472c8",
+                  "purple": "#bc3fbc",
+                  "cyan": "#11a8cd",
+                  "white": "#e5e5e5",
+                  "brightBlack": "#666666",
+                  "brightRed": "#f14c4c",
+                  "brightGreen": "#23d18b",
+                  "brightYellow": "#f5f543",
+                  "brightBlue": "#3b8eea",
+                  "brightPurple": "#d670d6",
+                  "brightCyan": "#29b8db",
+                  "brightWhite": "#e5e5e5",
+                  "background": "#1A1A30",
+                  "foreground": "#eeeeee"
+                }],
+
+    // Add any keybinding overrides to this array.
+    // To unbind a default keybinding, set the command to "unbound"
+    "keybindings": []
+}
