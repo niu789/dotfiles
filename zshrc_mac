@@ -97,7 +97,7 @@ COMPLETION_WAITING_DOTS="true"
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(git terraform go docker docker-compose virtualenv)
+plugins=(git terraform golang docker docker-compose virtualenv)
 
 source $ZSH/oh-my-zsh.sh
 
