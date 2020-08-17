@@ -127,8 +127,6 @@ source $ZSH/oh-my-zsh.sh
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 #
-alias docker="docker.exe"
-alias docker-compose="docker-compose.exe"
 #
 DISPLAY=:0.0
 export DISPLAY
