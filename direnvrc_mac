@@ -35,7 +35,8 @@ asdf_has() {
   fi
   return 1
 }
- 
+
+# deprecated 
 use_sdk() {
   if [[ -s "${HOME}/.sdkman/bin/sdkman-init.sh" ]]; then
     # shellcheck disable=SC1090
@@ -86,9 +87,18 @@ layout_python-venv() {
 use_pre-commit() {
   if ! [[ -f "$(git rev-parse --show-toplevel)/.git/hooks/pre-commit" ]]; then
     pre-commit install --install-hooks
+    pre-commit install --install-hooks --hook-type commit-msg
   fi
 }
- 
+
+use_git-message-template() {
+  if [[ -r "$(git rev-parse --show-toplevel)/.gitmessage" ]]; then
+    if ! git config --local --get commit.template ; then
+      git config --local --add commit.template .gitmessage
+    fi
+  fi
+}
+
 use_pipx() {
   if ! has python3; then
     echo "Python 3 version 3.6 or higher required for PipX"
@@ -115,4 +125,30 @@ use_pipx() {
   export PIPX_HOME="$(direnv_layout_dir)/pipx"
   export PIPX_BIN_DIR="${PIPX_HOME}/bin"
   PATH_add "${PIPX_BIN_DIR}"
+
+  ## Periodic PipX package upgrades
+  mkdir -p "${PIPX_HOME}"
+  local -r _update_marker="${PIPX_HOME}/.lastupdated"
+  local _last_updated
+  local _now
+  local _update_interval=$((7 * 24 * 60 * 60)) # One week
+  if [[ -f "${_update_marker}" ]]; then
+    case "$(uname)" in
+      Darwin*)
+        # MacOS is "special"
+        _last_updated="$(stat -f '%m' "${_update_marker}")"
+        ;;
+      *)
+        _last_updated="$(stat --format='%Y' "${_update_marker}")"
+        ;;
+    esac
+    _now="$(date '+%s')"
+    if [[ $((_now - _last_updated)) -gt $_update_interval ]]; then
+      echo "Upgrading PipX packages..."
+      pipx upgrade-all
+      touch "${_update_marker}"
+    fi
+  else
+    touch "${_update_marker}"
+  fi
 }
