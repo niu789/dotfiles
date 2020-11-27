@@ -1,5 +1,7 @@
-/usr/bin/keychain --nogui $HOME/.ssh/id_rsa
+/usr/bin/keychain --nogui $HOME/.ssh/id_rsa*
 source $HOME/.keychain/$HOST-sh
+
+export GPG_TTY=$(tty)
 
 # Enable Powerlevel10k instant prompt. Should stay close to the top of ~/.zshrc.
 # Initialization code that may require console input (password prompts, [y/n]
@@ -97,7 +99,7 @@ COMPLETION_WAITING_DOTS="true"
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(git terraform golang docker docker-compose virtualenv)
+plugins=(git terraform go docker docker-compose virtualenv)
 
 source $ZSH/oh-my-zsh.sh
 
