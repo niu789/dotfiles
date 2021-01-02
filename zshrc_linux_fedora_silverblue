@@ -104,7 +104,7 @@ COMPLETION_WAITING_DOTS="true"
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(git terraform golang docker docker-compose virtualenv)
+plugins=(git asdf gpg-agent terraform golang docker docker-compose virtualenv)
 
 source $ZSH/oh-my-zsh.sh
 
@@ -153,7 +153,8 @@ prompt_context() {
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
 
-eval "$(direnv hook zsh)"
+eval "$(asdf exec direnv hook zsh)"
+direnv() { asdf exec direnv "$@"; }
 
 . $(brew --prefix asdf)/asdf.sh
 
