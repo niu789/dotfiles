@@ -1,5 +1,7 @@
-/usr/bin/keychain --nogui $HOME/.ssh/id_rsa
+keychain --nogui $HOME/.ssh/id_rsa*
 source $HOME/.keychain/$HOST-sh
+
+export GPG_TTY=$(tty)
 
 # Enable Powerlevel10k instant prompt. Should stay close to the top of ~/.zshrc.
 # Initialization code that may require console input (password prompts, [y/n]
@@ -8,18 +10,21 @@ source $HOME/.keychain/$HOST-sh
 #  source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
 #fi
 
-export DOCKER_HOST=localhost:2375
+#export DOCKER_HOST=localhost:2375
 
 if type brew &>/dev/null; then
 	  FPATH=$(brew --prefix)/share/zsh/site-functions:$FPATH
 fi
 
 # If you come from bash you might have to change your $PATH.
-export PATH=/home/linuxbrew/.linuxbrew/bin:$HOME/bin:/usr/local/bin:$PATH
+export PATH=$HOME/.local/bin:$HOME/bin:/usr/local/bin:/usr/local/sbin:$PATH
+export PATH="/usr/local/opt/openssl@1.1/bin:$PATH"
 
 # For compilers to find zlib you may need to set:
-export LDFLAGS="${LDFLAGS} -L/home/linuxbrew/.linuxbrew/opt/zlib/lib"
-export CPPFLAGS="${CPPFLAGS} -I/home/linuxbrew/.linuxbrew/opt/zlib/include"
+#export LDFLAGS="${LDFLAGS} -L/home/linuxbrew/.linuxbrew/opt/zlib/lib"
+#export CPPFLAGS="${CPPFLAGS} -I/home/linuxbrew/.linuxbrew/opt/zlib/include"
+export LDFLAGS="-L/usr/local/opt/zlib/lib"
+export CPPFLAGS="-I/usr/local/opt/zlib/include"
 
 # For pkg-config to find zlib you may need to set:
 export PKG_CONFIG_PATH="${PKG_CONFIG_PATH} /usr/local/opt/zlib/lib/pkgconfig"
@@ -97,7 +102,7 @@ COMPLETION_WAITING_DOTS="true"
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(git asdf gpg-agent terraform golang docker docker-compose virtualenv)
+plugins=(git terraform golang docker docker-compose virtualenv wd gradle asdf gpg-agent)
 
 source $ZSH/oh-my-zsh.sh
 
@@ -127,6 +132,8 @@ source $ZSH/oh-my-zsh.sh
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 #
+#alias docker="docker.exe"
+#alias docker-compose="docker-compose.exe"
 #
 DISPLAY=:0.0
 export DISPLAY
@@ -146,13 +153,7 @@ prompt_context() {
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
 
-eval "$(asdf exec direnv hook zsh)"
-direnv() { asdf exec direnv "$@"; }
-
-. $(brew --prefix asdf)/asdf.sh
-
-. $(brew --prefix asdf)/etc/bash_completion.d/asdf.bash
-
 #THIS MUST BE AT THE END OF THE FILE FOR SDKMAN TO WORK!!!
 export SDKMAN_DIR="$HOME/.sdkman"
 [[ -s "$HOME/.sdkman/bin/sdkman-init.sh" ]] && source "$HOME/.sdkman/bin/sdkman-init.sh"
+path=("${HOME}/.local/bin" $path) ; path+=("${HOME}/bin") ; export PATH
