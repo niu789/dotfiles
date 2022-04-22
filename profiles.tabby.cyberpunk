@@ -1,0 +1,230 @@
+terminal:
+  colorScheme:
+    name: Cyberpunk
+    foreground: '#cc0055'
+    background: '#000033'
+    cursor: '#fc971f'
+    colors:
+      - '#0F105F'
+      - '#f92672'
+      - '#4df840'
+      - '#f4fd22'
+      - '#2757d6'
+      - '#8c54fe'
+      - '#38c8b5'
+      - '#ccccc6'
+      - '#505354'
+      - '#ff5995'
+      - '#b6e354'
+      - '#feed6c'
+      - '#3f78ff'
+      - '#9e6ffe'
+      - '#23cfd5'
+      - '#f8f8f2'
+  background: colorScheme
+  font: Meslo LG S DZ for Powerline
+  searchOptions: {}
+  fontSize: 12
+  customColorSchemes:
+    - name: Cyberpunk
+      foreground: '#cc0055'
+      background: '#000033'
+      cursor: '#fc971f'
+      colors:
+        - '#0F105F'
+        - '#f92672'
+        - '#4df840'
+        - '#f4fd22'
+        - '#2757d6'
+        - '#8c54fe'
+        - '#38c8b5'
+        - '#ccccc6'
+        - '#505354'
+        - '#ff5995'
+        - '#b6e354'
+        - '#feed6c'
+        - '#3f78ff'
+        - '#9e6ffe'
+        - '#23cfd5'
+        - '#f8f8f2'
+hotkeys:
+  shell: {}
+  profile: {}
+  toggle-window:
+    - Ctrl-Space
+  copy-current-path: []
+  ctrl-c:
+    - Ctrl-C
+  copy:
+    - Ctrl-Shift-C
+  paste:
+    - Ctrl-Shift-V
+    - Shift-Insert
+  select-all:
+    - Ctrl-Shift-A
+  clear: []
+  zoom-in:
+    - Ctrl-=
+    - Ctrl-Shift-=
+  zoom-out:
+    - Ctrl--
+    - Ctrl-Shift--
+  reset-zoom:
+    - Ctrl-0
+  home:
+    - Home
+  end:
+    - End
+  previous-word:
+    - Ctrl-Left
+  next-word:
+    - Ctrl-Right
+  delete-previous-word:
+    - Ctrl-Backspace
+  delete-next-word:
+    - Ctrl-Delete
+  search:
+    - Ctrl-Shift-F
+  pane-focus-all:
+    - Ctrl-Shift-I
+  restart-telnet-session: []
+  restart-ssh-session: []
+  launch-winscp: []
+  settings:
+    - Ctrl-,
+  serial:
+    - Alt-K
+  restart-serial-session: []
+  new-window:
+    - Ctrl-Shift-N
+  new-tab:
+    - Ctrl-Shift-T
+  profile-selectors: {}
+  toggle-fullscreen:
+    - F11
+  close-tab:
+    - Ctrl-Shift-W
+  reopen-tab:
+    - Ctrl-Shift-T
+  toggle-last-tab: []
+  rename-tab:
+    - Ctrl-Shift-R
+  next-tab:
+    - Ctrl-Shift-Right
+    - Ctrl-Tab
+  previous-tab:
+    - Ctrl-Shift-Left
+    - Ctrl-Shift-Tab
+  move-tab-left:
+    - Ctrl-Shift-PageUp
+  move-tab-right:
+    - Ctrl-Shift-PageDown
+  rearrange-panes:
+    - Ctrl-Shift
+  tab-1:
+    - Alt-1
+  tab-2:
+    - Alt-2
+  tab-3:
+    - Alt-3
+  tab-4:
+    - Alt-4
+  tab-5:
+    - Alt-5
+  tab-6:
+    - Alt-6
+  tab-7:
+    - Alt-7
+  tab-8:
+    - Alt-8
+  tab-9:
+    - Alt-9
+  tab-10:
+    - Alt-0
+  tab-11: []
+  tab-12: []
+  tab-13: []
+  tab-14: []
+  tab-15: []
+  tab-16: []
+  tab-17: []
+  tab-18: []
+  tab-19: []
+  tab-20: []
+  split-right:
+    - Ctrl-Shift-E
+  split-bottom:
+    - Ctrl-Shift-D
+  split-left: []
+  split-top: []
+  pane-nav-right:
+    - Ctrl-Alt-Right
+  pane-nav-down:
+    - Ctrl-Alt-Down
+  pane-nav-up:
+    - Ctrl-Alt-Up
+  pane-nav-left:
+    - Ctrl-Alt-Left
+  pane-nav-previous:
+    - Ctrl-Alt-[
+  pane-nav-next:
+    - Ctrl-Alt-]
+  pane-maximize:
+    - Ctrl-Alt-Enter
+  close-pane: []
+  switch-profile:
+    - Ctrl-Alt-T
+  profile-selector:
+    - Ctrl-Shift-T
+serial: {}
+ssh: {}
+appearance: {}
+enableAnalytics: false
+enableWelcomeTab: false
+pluginBlacklist: []
+version: 3
+profiles:
+  - id: ssh:f3965c0f-6d54-402c-8c01-4702f133b52b
+    type: ssh
+    icon: fas fa-desktop
+    name: AnsibleController UK
+    options:
+      name: AnsibleController UK
+      group: null
+      host: 167.172.63.95
+      port: 22
+      user: niu789
+      algorithms:
+        hmac:
+          - hmac-sha2-256
+          - hmac-sha2-512
+          - hmac-sha1
+        kex:
+          - ecdh-sha2-nistp256
+          - ecdh-sha2-nistp384
+          - ecdh-sha2-nistp521
+          - diffie-hellman-group-exchange-sha256
+          - diffie-hellman-group14-sha256
+          - diffie-hellman-group16-sha512
+          - diffie-hellman-group18-sha512
+          - diffie-hellman-group14-sha1
+        cipher:
+          - aes128-ctr
+          - aes192-ctr
+          - aes256-ctr
+          - aes128-gcm
+          - aes128-gcm@openssh.com
+          - aes256-gcm
+          - aes256-gcm@openssh.com
+        serverHostKey:
+          - ssh-ed25519
+          - ecdsa-sha2-nistp256
+          - ecdsa-sha2-nistp384
+          - ecdsa-sha2-nistp521
+          - ssh-rsa
+      scripts: []
+      auth: keyboardInteractive
+      privateKeys:
+        - /home/niu789/Dropbox/keepass/keys/private_key_niu789.ppk
+configSync:
+  parts: {}
