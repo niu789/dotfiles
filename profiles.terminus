@@ -1,0 +1,38 @@
+terminal:
+  colorScheme:
+    name: SymfonicNico
+    foreground: '#ffffff'
+    background: '#0F000F'
+    cursor: '#dc322f'
+    colors:
+      - '#0F000F'
+      - '#dc322f'
+      - '#56db3a'
+      - '#ff8400'
+      - '#0084d4'
+      - '#b729d9'
+      - '#ccccff'
+      - '#ffffff'
+      - '#1b1d21'
+      - '#dc322f'
+      - '#56db3a'
+      - '#ff8400'
+      - '#0084d4'
+      - '#b729d9'
+      - '#ccccff'
+      - '#ffffff'
+  environment: {}
+  workingDirectory: /home/nbelanger
+  background: colorScheme
+  font: Meslo Nerd Font
+hotkeys:
+  shell: {}
+  profile: {}
+serial: {}
+ssh: {}
+appearance:
+  theme: Standard
+  frame: thin
+enableWelcomeTab: false
+pluginBlacklist: []
+
